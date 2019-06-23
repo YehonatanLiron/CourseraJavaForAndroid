@@ -22,23 +22,65 @@ public class Account {
     /**
      * Name of the account holder.
      */
-    String name;
+    private String name;
 
     /**
      * Number of the account.
      */
-    int number;
+    private int number;
 
     /**
      * Current balance in the account.
      */
-    double balance;
+    private double balance;
+
+    /* Getter Methods */
+    public  String getName()
+    {
+        return name;
+    }
+
+    public int getNumber()
+    {
+        return number;
+    }
+
+    public double getBalance()
+    {
+        return balance;
+    }
+
+    /* Setter Methods */
+
+    public void setNumber(int number)
+    {
+        this.number = number;
+    }
+
+    public void setName(String name)
+    {
+        this.name = name;
+    }
 
     /**
      * Constructor initializes the field
      */
-    public Account(OutputInterface out) {
+    public Account(OutputInterface out)
+    {
         mOut = out;
+    }
+
+    public Account(OutputInterface out, String name, int number)
+    {
+        this(out);
+        this.name = name;
+        this.number = number;
+    }
+
+    public Account(OutputInterface out, String name, int number, double balance)
+    {
+        this(out, name, number);
+        this.balance = balance;
     }
 
     /**
@@ -52,11 +94,16 @@ public class Account {
      * Withdraw @a amount from the account.  Prints "Insufficient
      * Funds" if there's not enough money in the account.
      */
-    public void withdrawal(double amount) {
-        if (balance > amount)
+    public boolean withdrawal(double amount)
+    {
+        boolean retVal;
+        if (balance > amount) {
             balance -= amount;
-        else 
-            mOut.println("Insufficient Funds");
+            retVal = true;
+        }
+        else
+            retVal = false;
+        return retVal;
     }
 
     /**
@@ -67,5 +114,19 @@ public class Account {
                      + number
                      + " is " 
                      + balance);
+    }
+
+    @Override
+    public boolean equals(Object other)
+    {
+        if (other instanceof Account)
+        {
+            Account other_account = (Account) other;
+            return this.number == other_account.number;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
