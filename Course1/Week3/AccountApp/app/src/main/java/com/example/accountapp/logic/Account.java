@@ -29,6 +29,8 @@ public class Account {
      */
     private int number;
 
+    private static int count;
+
     /**
      * Current balance in the account.
      */
@@ -52,11 +54,6 @@ public class Account {
 
     /* Setter Methods */
 
-    public void setNumber(int number)
-    {
-        this.number = number;
-    }
-
     public void setName(String name)
     {
         this.name = name;
@@ -68,18 +65,19 @@ public class Account {
     public Account(OutputInterface out)
     {
         mOut = out;
+        this.number = count;
+        count += 1;
     }
 
-    public Account(OutputInterface out, String name, int number)
+    public Account(OutputInterface out, String name)
     {
         this(out);
         this.name = name;
-        this.number = number;
     }
 
-    public Account(OutputInterface out, String name, int number, double balance)
+    public Account(OutputInterface out, String name, double balance)
     {
-        this(out, name, number);
+        this(out, name);
         this.balance = balance;
     }
 
