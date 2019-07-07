@@ -25,6 +25,8 @@ public class HerdManager {
      */
     private Gate mWestGate;
 
+    public static final int HERD = 24;
+
     /**
      * Maximum number of iterations to run the simulation.
      */
@@ -46,6 +48,41 @@ public class HerdManager {
     }
 
     // TODO -- Fill your code in here
+    void simulateHerd(Random rand)
+    {
+        int herd = HERD;
+        int atPasture = 0;
+
+        int numOfIterations = 10;
+
+        for (int i = 0; i < numOfIterations; i++)
+        {
+            int w_or_e_0_1;
+
+            if (0 == atPasture)
+            {
+                w_or_e_0_1 = 1; // east (OUT) gate auto chosen - all the snails are in
+            }
+            else
+            {
+                w_or_e_0_1 = rand.nextInt();
+            }
+
+            if (w_or_e_0_1 == 0)
+            {
+                int movingIn = rand.nextInt(atPasture) + 1;
+                herd = herd + movingIn;
+                atPasture = atPasture - movingIn;
+            }
+            else
+            {
+                int movingOut = rand.nextInt(herd) + 1;
+                herd = herd - movingOut;
+                atPasture = atPasture + movingOut;
+            }
+
+        }
+    }
 
 
 }
