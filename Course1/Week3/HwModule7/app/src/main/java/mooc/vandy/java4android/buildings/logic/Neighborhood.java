@@ -10,7 +10,8 @@ import mooc.vandy.java4android.buildings.ui.OutputInterface;
  * A utility class in Java should always be final and have a private
  * constructor, as per https://en.wikipedia.org/wiki/Utility_class.
  */
-public final class Neighborhood {
+public final class Neighborhood
+{
 
     // TODO - Put your code here.
     
