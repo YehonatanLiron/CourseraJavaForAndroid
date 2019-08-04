@@ -70,7 +70,7 @@ public class House extends Building
 
         if (this.calcLotArea() > this.calcBuildingArea())
         {
-            retString = retString.concat("; has big open space");
+            retString = retString.concat("; has a big open space");
         }
 
         return retString;
