@@ -3,7 +3,7 @@ package mooc.vandy.java4android.calculator.logic;
 /**
  * Perform the Divide operation.
  */
-public class Divide implements Operation{
+public class Divide implements OperationInterface{
     int quotient;
     int remainder;
     boolean warning;

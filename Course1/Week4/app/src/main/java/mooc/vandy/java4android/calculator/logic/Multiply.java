@@ -3,7 +3,7 @@ package mooc.vandy.java4android.calculator.logic;
 /**
  * Perform the Multiply operation.
  */
-public class Multiply implements Operation{
+public class Multiply implements OperationInterface{
     int product;
 
     public Multiply(int argumentOne, int argumentTwo)

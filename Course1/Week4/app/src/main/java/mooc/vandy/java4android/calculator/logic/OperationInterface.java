@@ -1,6 +1,6 @@
 package mooc.vandy.java4android.calculator.logic;
 
-public interface Operation
+public interface OperationInterface
 {
     public String toString();
 }

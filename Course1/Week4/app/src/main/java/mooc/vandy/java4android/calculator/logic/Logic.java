@@ -35,7 +35,7 @@ public class Logic
                         int argumentTwo,
                         int operation)
     {
-        Operation op;
+        OperationInterface op;
 
         switch (operation)
         {
@@ -51,6 +51,7 @@ public class Logic
                 op = new Multiply(argumentOne, argumentTwo);
             break;
 
+            //Divide is the default so op will never be undefined.
             default:
                 op = new Divide(argumentOne, argumentTwo);
             break;

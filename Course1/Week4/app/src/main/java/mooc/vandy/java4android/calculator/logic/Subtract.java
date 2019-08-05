@@ -3,7 +3,7 @@ package mooc.vandy.java4android.calculator.logic;
 /**
  * Perform the Subtract operation.
  */
-public class Subtract implements Operation{
+public class Subtract implements OperationInterface{
     int difference;
 
     public Subtract(int argumentOne, int argumentTwo)

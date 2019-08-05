@@ -3,7 +3,7 @@ package mooc.vandy.java4android.calculator.logic;
 /**
  * Perform the Add operation.
  */
-public class Add implements Operation
+public class Add implements OperationInterface
 {
     private int sum;
 
