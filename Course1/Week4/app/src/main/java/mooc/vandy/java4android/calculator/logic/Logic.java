@@ -23,12 +23,39 @@ public class Logic
         mOut = out;
     }
 
+    public final static int ADD = 1;
+    public final static int SUBTRACT = 2;
+    public final static int MULTIPLY = 3;
+    public final static int DIVIDE = 4;
+
     /**
      * Perform the @a operation on @a argumentOne and @a argumentTwo.
      */
     public void process(int argumentOne,
                         int argumentTwo,
-                        int operation){
-        // TODO -- start your code here
+                        int operation)
+    {
+        Operation op;
+
+        switch (operation)
+        {
+            case ADD:
+                op = new Add(argumentOne, argumentTwo);
+            break;
+
+            case SUBTRACT:
+                op = new Subtract(argumentOne, argumentTwo);
+            break;
+
+            case MULTIPLY:
+                op = new Multiply(argumentOne, argumentTwo);
+            break;
+
+            default:
+                op = new Divide(argumentOne, argumentTwo);
+            break;
+        }
+
+        this.mOut.print(op.toString());
     }
 }
